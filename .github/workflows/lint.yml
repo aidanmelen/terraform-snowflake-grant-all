@@ -19,7 +19,7 @@ jobs:
     name: Code Format
     runs-on: ubuntu-latest
     container:
-      image: hashicorp/terraform:latest
+      image: hashicorp/terraform:0.12.0
     steps:
       - uses: actions/checkout@master
       - run: terraform fmt --recursive -check=true
@@ -38,7 +38,7 @@ jobs:
     name: Validate
     runs-on: ubuntu-latest
     container:
-      image: hashicorp/terraform:0.13.0
+      image: hashicorp/terraform:0.12.0
     steps:
       - uses: actions/checkout@master
       - name: Validate Code
@@ -60,7 +60,7 @@ jobs:
     name: Minimum version check
     runs-on: ubuntu-latest
     container:
-      image: hashicorp/terraform:0.13.0
+      image: hashicorp/terraform:0.12.0
     steps:
       - uses: actions/checkout@master
       - name: Validate Code
